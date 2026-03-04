@@ -6,9 +6,21 @@ public class CustomListTest {
     @Test
     public void testHasCity() {
         CustomList list = new CustomList();
-        City calgary = new City("Calgary", "AB");
-        list.addCity(calgary);
+        City edmonton = new City("edmonton", "AB");
+        list.addCity(edmonton);
 // This will fail initially because hasCity() doesn't
-        assertTrue(list.hasCity(calgary));
+        assertTrue(list.hasCity(edmonton));
+    }
+
+    @Test
+    public void testDeleteCity() {
+        CustomList list = new CustomList();
+        City edmonton = new City("Edmonton", "AB");
+        list.addCity(edmonton);
+// This will fail initially because hasCity() doesn't
+        assertTrue(list.hasCity(edmonton));
+
+        list.deleteCity(edmonton);
+        assertFalse(list.hasCity(edmonton));
     }
 }
